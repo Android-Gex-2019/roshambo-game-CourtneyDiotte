@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * @author Courtney Diotte
+ *
+ * @version 1.0
+ * *
+ * @section DESCRIPTION
+ * Rock Paper Scissors App - main layout
+ *
+ * @section LICENSE
+ * *
+ * Copyright 2018
+ * Permission to use, copy, modify, and/or distribute this software for
+ * any purpose with or without fee is hereby granted, provided that the
+ * above copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ *
+ * @section Academic Integrity
+ * I certify that this work is solely my own and complies with
+ * NBCC Academic Integrity Policy (policy 1111)
+-->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/rock_button"
+        android:layout_width="126dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/choose_rock"
+        android:onClick="play"
+        android:tag="@string/rock_tag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/paper_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageView
+        android:id="@+id/paper_button"
+        android:layout_width="126dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/choose_paper"
+        android:onClick="play"
+        android:tag="@string/paper_tag"
+        app:layout_constraintBottom_toBottomOf="@+id/rock_button"
+        app:layout_constraintEnd_toStartOf="@+id/scissors_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rock_button"
+        app:layout_constraintTop_toTopOf="@+id/rock_button"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageView
+        android:id="@+id/scissors_button"
+        android:layout_width="127dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/choose_scissors"
+        android:onClick="play"
+        android:tag="@string/scissors_tag"
+        app:layout_constraintBottom_toBottomOf="@+id/paper_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/paper_button"
+        app:layout_constraintTop_toTopOf="@+id/paper_button"
+        app:srcCompat="@drawable/scissors" />
+
+    <ImageView
+        android:id="@+id/player_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/displays_players_move"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rock_button"
+        app:layout_constraintVertical_bias="0.377"
+        app:srcCompat="@drawable/none" />
+
+    <ImageView
+        android:id="@+id/game_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/games_move_text"
+        app:layout_constraintBottom_toBottomOf="@+id/player_move"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_move"
+        app:layout_constraintTop_toTopOf="@+id/player_move"
+        app:srcCompat="@drawable/none" />
+
+    <TextView
+        android:id="@+id/player_move_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/players_move"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/player_move"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/player_move"
+        app:layout_constraintTop_toBottomOf="@+id/player_move"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <TextView
+        android:id="@+id/game_move_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/games_move"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/game_move"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="@+id/game_move"
+        app:layout_constraintTop_toBottomOf="@+id/game_move"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <TextView
+        android:id="@+id/outcome_text"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/win_lose_draw"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
+</android.support.constraint.ConstraintLayout>
